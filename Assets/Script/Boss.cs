@@ -48,7 +48,9 @@ public class Boss : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
+            GameVariables.nbGold += 5;
             Destroy(gameObject);
+
         }
 
         if (moving)
