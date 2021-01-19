@@ -16,6 +16,8 @@ public class ArrowBehaviour : MonoBehaviour
 
     Rigidbody2D rgb;
 
+    public bool FinishThrow { get => finishThrow; set => finishThrow = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +37,8 @@ public class ArrowBehaviour : MonoBehaviour
             accelerationTimer = accelerationTime;
         }
 
-        if(!finishThrow && accelerationTimer >= accelerationTime){
-            finishThrow = true;
+        if(!FinishThrow && accelerationTimer >= accelerationTime){
+            FinishThrow = true;
             GetComponent<SpriteRenderer>().sprite = throwedSprite;
             transform.rotation = Quaternion.identity;
         }

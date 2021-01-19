@@ -22,6 +22,7 @@ public class PlayerBehaviour : MonoBehaviour
     private Vector2 positionSouris;
     bool normalMode = true; //False -> Sneaky
     bool canMove = true;
+    bool canShoot = true;
 
 
     // Start is called before the first frame update
@@ -58,6 +59,15 @@ public class PlayerBehaviour : MonoBehaviour
         rgb.velocity = direction * currentSpeed * (accelerationTimer / accelerationTime);
 
         //SHOOT
+        if(GameVariables.nbArrow <= 0)
+        {
+            canShoot = false;
+        }
+        else
+        {
+            canShoot = true;
+        }
+
         Vector2 vec = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         actions(vec);
@@ -102,17 +112,21 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space)) {
             barre.gameObject.SetActive(false);
             animator.SetBool("isActif", false);
-            GameObject a = Instantiate(arrow, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-            a.transform.right = new Vector3(vec.x, vec.y, 0) - a.transform.position;
-            float intensity = barre.GetComponent<BarreBehaviour>().valeur;
-            a.GetComponent<ArrowBehaviour>().speed = arrowSpeed;
-            a.GetComponent<ArrowBehaviour>().accelerationTime = intensity * arrowDistance;
-            Debug.Log(a.transform.position);
+
             StopCoroutine("Timer");
             animator.SetBool("isTrouble", false);
             StartCoroutine("Shoot");
             canMove = true;
             animator.speed = 1;
+            if (canShoot)
+            {
+                GameObject a = Instantiate(arrow, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                a.transform.right = new Vector3(vec.x, vec.y, 0) - a.transform.position;
+                float intensity = barre.GetComponent<BarreBehaviour>().valeur;
+                a.GetComponent<ArrowBehaviour>().speed = arrowSpeed;
+                a.GetComponent<ArrowBehaviour>().accelerationTime = intensity * arrowDistance;
+                GameVariables.nbArrow--;
+            }
         }
     }
 
@@ -133,6 +147,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     IEnumerator Shoot() {
+        MusicManager.GetMusic().PlayEffect("shoot"); 
         animator.SetBool("isShooting", true);
         yield return new WaitForSeconds(0.5f);
         animator.SetBool("isShooting", false);
