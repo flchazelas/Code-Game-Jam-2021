@@ -8,6 +8,8 @@ public class Boss : MonoBehaviour
     public int MaxHealth;
     public int CurrentHealth;
 
+    private int domageBoss;
+
     //Deplacement Boss
     public float moveSpeed;
 
@@ -27,9 +29,12 @@ public class Boss : MonoBehaviour
     public bool reloading;
     private GameObject thePlayer;
 
+    public int DomageBoss { get => domageBoss; set => domageBoss = value; }
+
     // Start is called before the first frame update
     void Start()
     {
+        DomageBoss = 1;
         CurrentHealth = MaxHealth;
 
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -48,7 +53,9 @@ public class Boss : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
+            GameVariables.nbGold += 5;
             Destroy(gameObject);
+
         }
 
         if (moving)

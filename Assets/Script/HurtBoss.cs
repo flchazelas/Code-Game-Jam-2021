@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HurtEnemy : MonoBehaviour
+public class HurtBoss : MonoBehaviour
 {
 
     public int damageToGive;
@@ -24,7 +24,7 @@ public class HurtEnemy : MonoBehaviour
         if (other.gameObject.tag == "Arrow");
         {
             //Destroy(other.gameObject);
-            other.gameObject.GetComponent<EnemyHeal>().HurtEnemy(damageToGive);
+            other.gameObject.GetComponent<Boss>().HurtEnemy(damageToGive);
 
         }
     }

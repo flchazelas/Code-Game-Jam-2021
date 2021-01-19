@@ -578,6 +578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5451944357634640768, guid: 90c44e642b28f2c439eced8c24af59ad,
         type: 3}
+      propertyPath: volume
+      value: 0.183
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451944357634640768, guid: 90c44e642b28f2c439eced8c24af59ad,
+        type: 3}
       propertyPath: allSoundsEffects.Array.size
       value: 4
       objectReference: {fileID: 0}
