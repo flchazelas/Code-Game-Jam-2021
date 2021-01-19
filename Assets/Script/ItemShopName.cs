@@ -7,11 +7,17 @@ public class ItemShopName : MonoBehaviour
 {
     public GameObject item;
     public Text itemName;
+    public int price;
+    public string name;
+    public Sprite itemView;
 
     // Start is called before the first frame update
     void Start()
     {
+        itemView = GetComponent<SpriteRenderer>().sprite;
+        itemName.text = name + "\n" + price + "$";
         itemName.enabled = false;   
+        
     }
 
     // Update is called once per frame
