@@ -7,6 +7,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float speed = 1f;
 
     private Rigidbody2D rgb;
+    public GameObject arrow;
 
     // Start is called before the first frame update
     void Start()
@@ -14,12 +15,23 @@ public class PlayerBehaviour : MonoBehaviour
         rgb = GetComponent<Rigidbody2D>();
     }
 
+    void FixedUpdate()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Z))
+        float h = Input.GetAxis("Horizontal") * speed;
+        float v = Input.GetAxis("Vertical") * speed;
+
+        rgb.velocity = new Vector2(h, v);
+
+        /*
+        if (Input.GetButtonUp())
         {
-            
-        }
+            Instantiate(arrow);
+        }*/
     }
 }
