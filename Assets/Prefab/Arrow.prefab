@@ -98,8 +98,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  accelerationTime: 2
+  accelerationTime: 0.5
   accelerationTimer: 0
+  degatsArrow: 1
+  curveSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.99816895
+      inSlope: 0.00000050096287
+      outSlope: 0.00000050096287
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.40781862
+    - serializedVersion: 3
+      time: 0.26481688
+      value: 1.0036751
+      inSlope: -0.024236353
+      outSlope: -0.024236353
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10501298
+      outWeight: 0.10309378
+    - serializedVersion: 3
+      time: 1
+      value: -0.00002670288
+      inSlope: -0.73109615
+      outSlope: -0.73109615
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09627818
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  throwedSprite: {fileID: 1205448225432079197, guid: 7f1b47cd9df9ce34ca80068518ecc22c,
+    type: 3}
 --- !u!50 &7754648011281030880
 Rigidbody2D:
   serializedVersion: 4
@@ -134,7 +170,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01564698, y: 0.016624928}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -145,5 +181,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.125, y: 0.125}
+  m_Size: {x: 0.2814698, y: 0.15824986}
   m_EdgeRadius: 0
