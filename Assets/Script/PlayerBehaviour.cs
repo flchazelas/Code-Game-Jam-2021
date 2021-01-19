@@ -14,6 +14,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     public float arrowSpeed = 2f;
     public float arrowDistance = 1f;
+    public int ptsVie;
+    public int ptsDegat;
 
     Animator animator;
 
@@ -31,6 +33,8 @@ public class PlayerBehaviour : MonoBehaviour
         rgb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         StartCoroutine("Respire");
+        ptsDegat = 10;
+        ptsVie = GameVariables.nbHeart;
     }
 
     // Update is called once per frame
@@ -124,8 +128,18 @@ public class PlayerBehaviour : MonoBehaviour
                 float intensity = barre.GetComponent<BarreBehaviour>().valeur;
                 a.GetComponent<ArrowBehaviour>().speed = arrowSpeed;
                 a.GetComponent<ArrowBehaviour>().accelerationTime = intensity * arrowDistance;
+                a.GetComponent<ArrowBehaviour>().degatsArrow = ptsDegat;
                 GameVariables.nbArrow--;
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.CompareTag("Enemy"))
+        {
+            GameVariables.nbHeart--;
+            ptsVie--;
         }
     }
 
