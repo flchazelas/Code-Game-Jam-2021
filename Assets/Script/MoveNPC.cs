@@ -20,7 +20,7 @@ public class MoveNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myRigidbody = GetComponent<Rigidbody2D>;
+        myRigidbody = GetComponent<Rigidbody2D>();
 
         waitCounter = waitTime;
         walkCounter = walkTime;
