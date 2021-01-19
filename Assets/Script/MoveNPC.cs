@@ -20,7 +20,7 @@ public class MoveNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myRigidbody = GetComponent<Rigidbody2D>;
+        myRigidbody = GetComponent<Rigidbody2D>();
 
         waitCounter = waitTime;
         walkCounter = walkTime;
@@ -39,10 +39,32 @@ public class MoveNPC : MonoBehaviour
                 isWalking = false;
                 waitCounter = waitTime;
             }
+            switch (WalkDirection)
+            {
+                case 0:
+
+                    break;
+
+                case 1:
+
+                    break;
+
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+            }
+
         }
         else
         {
-
+            waitCounter -= moveSpeed;
+            if (waitCounter < 0)
+            {
+                ChooseDirection();
+            }
         }
     }
 
