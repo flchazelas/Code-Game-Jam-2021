@@ -13,6 +13,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     private Rigidbody2D rgb;
     private Vector2 positionSouris;
+    bool mode = true;
+    bool canMove = true;
 
 
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         barre.enabled = false;
         rgb = GetComponent<Rigidbody2D>();
+        StartCoroutine("Respire");
     }
 
     void FixedUpdate()
@@ -29,7 +32,12 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (Mathf.Abs(h) > 0 || Mathf.Abs(v) > 0)
         {
-            accelerationTimer += Time.fixedDeltaTime;
+            if (canMove)
+                accelerationTimer += Time.fixedDeltaTime;
+            else
+            {
+                accelerationTimer = 0;
+            }
         }
 
         else
@@ -49,7 +57,8 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         Vector2 vec = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //Debug.Log(vec);
+
+        actions(vec);
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -57,15 +66,86 @@ public class PlayerBehaviour : MonoBehaviour
             barre.GetComponent<Animator>().SetBool("isActif", true);
         }
 
+        //Sneaky
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            GetComponent<Animator>().SetBool("isSneaky", true);
+            mode = false;
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("isSneaky", false);
+            mode = true;
+        }
+    }
+
+    public void actions(Vector2 vec)
+    {
+        //Deplacements
+        if (canMove && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow)))
+        {
+            if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            GetComponent<Animator>().SetBool("isRunning", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("isRunning", false);
+        }
+
+        //Shoot
+        if (Input.GetKey(KeyCode.Space))
+        {
+            canMove = false;
+            GetComponent<Animator>().SetBool("isPrepare", true);
+            StartCoroutine("Timer");
+        }
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             barre.enabled = false;
             barre.GetComponent<Animator>().SetBool("isActif", false);
-            GameObject a = Instantiate(arrow, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
+            GameObject a = Instantiate(arrow, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             a.transform.right = new Vector3(vec.x, vec.y, 0) - a.transform.position;
             a.GetComponent<ArrowBehaviour>().speed = barre.GetComponent<BarreBehaviour>().valeur;
             Debug.Log(a.transform.position);
-            //a.transform.forward = vec;
+            StopCoroutine("Timer");
+            GetComponent<Animator>().SetBool("isTrouble", false);
+            StartCoroutine("Shoot");
+            canMove = true;
         }
+    }
+
+    IEnumerator Respire()
+    {
+        if (mode)
+        {
+            GetComponent<Animator>().SetBool("isBreath", true);
+            yield return new WaitForSeconds(1);
+            GetComponent<Animator>().SetBool("isBreath", false);
+            yield return new WaitForSeconds(5);
+            StartCoroutine("Respire");
+        }
+    }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(3);
+        GetComponent<Animator>().SetBool("isTrouble", true);
+        StartCoroutine("Timer");
+    }
+
+    IEnumerator Shoot()
+    {
+        GetComponent<Animator>().SetBool("isShooting", true);
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<Animator>().SetBool("isShooting", false);
+        GetComponent<Animator>().SetBool("isPrepare", false);
     }
 }
