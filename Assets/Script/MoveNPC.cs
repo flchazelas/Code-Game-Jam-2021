@@ -8,70 +8,86 @@ public class MoveNPC : MonoBehaviour
 
     private Rigidbody2D myRigidbody;
 
-    public bool isWalking;
+    public bool moving;
 
-    public float walkTime;
-    public float walkCounter;
-    public float waitTime;
-    public float waitCounter;
+    public float timeBetweenMove;
+    public float timeBetweenMoveCounter;
+    public float timeToMove;
+    public float timeToMoveCounter;
 
-    private int WalkDirection;
+    private Vector3 moveDirector;
+
+    public float waitToReload;
+    public bool reloading;
+    private GameObject thePlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
 
-        waitCounter = waitTime;
-        walkCounter = walkTime;
+        //timeBetweenMoveCounter = timeBetweenMove;
+        //timeToMoveCounter = timeToMove;
 
-        ChooseDirection();
+        timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
+        timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeBetweenMove * 1.25f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isWalking)
+        if (moving)
         {
-            walkCounter -= moveSpeed;
-            if(walkCounter < 0)
+            timeToMoveCounter -= Time.deltaTime;
+            myRigidbody.velocity = moveDirector;
+
+            if (timeToMoveCounter < 0f)
             {
-                isWalking = false;
-                waitCounter = waitTime;
+                moving = false;
+                //timeBetweenMoveCounter = timeBetweenMove;
+                timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
+
             }
-            switch (WalkDirection)
-            {
-                case 0:
-
-                    break;
-
-                case 1:
-
-                    break;
-
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-            }
-
         }
         else
         {
-            waitCounter -= moveSpeed;
-            if (waitCounter < 0)
+            timeBetweenMoveCounter -= Time.deltaTime;
+            myRigidbody.velocity = Vector2.zero;
+
+            if (timeBetweenMoveCounter < 0f)
             {
-                ChooseDirection();
+                moving = true;
+                //timeToMoveCounter = timeToMove;
+                timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeBetweenMove * 1.25f);
+
+                moveDirector = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
+            }
+        }
+
+        if (reloading)
+        {
+            waitToReload -= Time.deltaTime;
+            if (waitToReload < 0)
+            {
+                Application.LoadLevel(Application.loadedLevel);
+                thePlayer.SetActive(true);
             }
         }
     }
 
-    public void ChooseDirection()
+  void OnCollisionEntre2D (Collision2D other)
     {
-        WalkDirection = Random.Range(0, 4);
-        isWalking = true;
-        walkCounter = walkTime;
+      if( other.gameObject.name == "Player")
+        {
+            // Destroy(other.gameObject);
+
+            other.gameObject.SetActive(false);
+            reloading = true;
+
+            thePlayer = other.gameObject;
+        }
     }
 }
+
+  
