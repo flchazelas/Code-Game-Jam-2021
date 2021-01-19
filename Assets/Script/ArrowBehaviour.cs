@@ -42,5 +42,10 @@ public class ArrowBehaviour : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = throwedSprite;
             transform.rotation = Quaternion.identity;
         }
+
+        if(FinishThrow)
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 }
