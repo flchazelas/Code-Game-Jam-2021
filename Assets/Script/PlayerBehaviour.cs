@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float accelerationTime = 1f;
     public float accelerationTimer = 0f;
     public GameObject arrow;
+    public Image barre;
 
     private Rigidbody2D rgb;
     private Vector2 positionSouris;
@@ -16,6 +18,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        barre.enabled = false;
         rgb = GetComponent<Rigidbody2D>();
     }
 
@@ -46,11 +49,21 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         Vector2 vec = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log(vec);
+        //Debug.Log(vec);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            barre.enabled = true;
+            barre.GetComponent<Animator>().SetBool("isActif", true);
+        }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            barre.enabled = false;
+            barre.GetComponent<Animator>().SetBool("isActif", false);
             GameObject a = Instantiate(arrow, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
+            a.transform.right = new Vector3(vec.x, vec.y, 0) - a.transform.position;
+            a.GetComponent<ArrowBehaviour>().speed = barre.GetComponent<BarreBehaviour>().valeur;
             Debug.Log(a.transform.position);
             //a.transform.forward = vec;
         }

@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  accelerationTime: 2
+  accelerationTimer: 0
 --- !u!50 &7754648011281030880
 Rigidbody2D:
   serializedVersion: 4
