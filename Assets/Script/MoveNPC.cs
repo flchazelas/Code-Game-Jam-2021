@@ -17,6 +17,10 @@ public class MoveNPC : MonoBehaviour
 
     private Vector3 moveDirector;
 
+    public float waitToReload;
+    public bool reloading;
+    private GameObject thePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +63,29 @@ public class MoveNPC : MonoBehaviour
 
                 moveDirector = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
             }
+        }
+
+        if (reloading)
+        {
+            waitToReload -= Time.deltaTime;
+            if (waitToReload < 0)
+            {
+                Application.LoadLevel(Application.loadedLevel);
+                thePlayer.SetActive(true);
+            }
+        }
+    }
+
+  void OnCollisionEntre2D (Collision2D other)
+    {
+      if( other.gameObject.name == "Player")
+        {
+            // Destroy(other.gameObject);
+
+            other.gameObject.SetActive(false);
+            reloading = true;
+
+            thePlayer = other.gameObject;
         }
     }
 }
