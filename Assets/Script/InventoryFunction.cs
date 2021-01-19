@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameVariable : MonoBehaviour
+public class InventoryFunction : MonoBehaviour
 {
-    public static int nbGold = 5;
-    public static int nbArrow = 5;
+    public int nbGold = 5;
+    public int nbArrow = 5;
 
-    public static void buyItem(int price)
+    public void buyItem(int price)
     {
         if(nbGold >= price)
         {
@@ -18,17 +18,17 @@ public class GameVariable : MonoBehaviour
         }
     }
 
-    public static void attackArrow()
+    public void attackArrow()
     {
         nbArrow--;
     }
 
-    public static void dropGold(string mob, int gain)
+    public void dropGold(string mob, int gain)
     {
         nbGold += gain;
     }
 
-    public static void dropArrow(int gain)
+    public void dropArrow(int gain)
     {
         nbArrow += gain;
     }
