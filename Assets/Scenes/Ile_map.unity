@@ -3368,7 +3368,6 @@ Transform:
   - {fileID: 609476609}
   - {fileID: 668193732}
   - {fileID: 911128091}
-  - {fileID: 1403869302}
   - {fileID: 340401791}
   - {fileID: 1620586419}
   - {fileID: 1403869302}
@@ -8334,6 +8333,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1242068428354911664, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
+        type: 3}
+      propertyPath: speedPrepare
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1242068428354911665, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
       propertyPath: m_Name

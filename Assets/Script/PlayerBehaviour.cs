@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerBehaviour : MonoBehaviour
 {
     public float speed = 1f;
-    public float speedPrepare = 1f;
     public float sneakySpeed = 0.2f;
     public float accelerationTime = 1f;
     public float accelerationTimer = 0f;
@@ -75,7 +74,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) {
             barre.gameObject.SetActive(true);
             barre.GetComponent<Animator>().SetBool("isActif", true);
-            barre.GetComponent<Animator>().speed = speedPrepare;
+            barre.GetComponent<Animator>().speed = GameVariables.speedPrepare;
         }
 
         //Sneaky
@@ -105,7 +104,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) {
             canMove = false;
             animator.SetBool("isPrepare", true);
-            animator.speed = speedPrepare;
+            animator.speed = GameVariables.speedPrepare;
             StartCoroutine("Timer");
         }
 
