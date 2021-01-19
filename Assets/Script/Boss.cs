@@ -50,10 +50,23 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (CurrentHealth <= 150)
+        {
+            moveSpeed = 1.5f;
+        }
+        if (CurrentHealth <= 100)
+        {
+            moveSpeed = 2f;
+        }
+        if (CurrentHealth <= 50)
+        {
+            moveSpeed = 2.5f;
+            timeBetweenMove = 0.5f;
+            timeToMove = 0.5f;
+        }
         if (CurrentHealth <= 0)
         {
-            GameVariables.nbGold += 5;
+            GameVariables.nbGold += 50;
             Destroy(gameObject);
 
         }
@@ -113,7 +126,7 @@ public class Boss : MonoBehaviour
     }
 
     //Vie
-    public void HurtEnemy(int damageToGive)
+    public void HurtBoss(int damageToGive)
     {
         CurrentHealth -= damageToGive;
     }

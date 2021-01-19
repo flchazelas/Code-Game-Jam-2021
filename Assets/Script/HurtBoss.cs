@@ -24,8 +24,8 @@ public class HurtBoss : MonoBehaviour
         if (other.gameObject.tag == "Arrow");
         {
             //Destroy(other.gameObject);
-            other.gameObject.GetComponent<Boss>().HurtEnemy(damageToGive);
-
+            Boss boss = other.gameObject.GetComponent<Boss>();
+            if (boss != null) boss.HurtBoss(damageToGive);
         }
     }
 }
