@@ -8,72 +8,53 @@ public class MoveNPC : MonoBehaviour
 
     private Rigidbody2D myRigidbody;
 
-    public bool isWalking;
+    public bool moving;
 
-    public float walkTime;
-    public float walkCounter;
-    public float waitTime;
-    public float waitCounter;
+    public float timeBetweenMove;
+    public float timeBetweenMoveCounter;
+    public float timeToMove;
+    public float timeToMoveCounter;
 
-    private int WalkDirection;
+    private Vector3 moveDirector;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
 
-        waitCounter = waitTime;
-        walkCounter = walkTime;
+        timeBetweenMoveCounter = timeBetweenMove;
+        timeToMoveCounter = timeToMove;
 
-        ChooseDirection();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isWalking)
+        if (moving)
         {
-            walkCounter -= Time.deltaTime;
-            
-            switch (WalkDirection)
+            timeToMoveCounter -= Time.deltaTime;
+            myRigidbody.velocity = moveDirector;
+
+            if (timeToMoveCounter < 0f)
             {
-                case 0:
-                    myRigidbody.velocity = new Vector2(0, moveSpeed);
-                    break;
-
-                case 1:
-                    myRigidbody.velocity = new Vector2(moveSpeed, 0);
-                    break;
-
-                case 2:
-                    myRigidbody.velocity = new Vector2(0, -moveSpeed);
-                    break;
-                case 3:
-                    myRigidbody.velocity = new Vector2(-moveSpeed, 0);
-                    break;
-            }
-
-            if (walkCounter < 0)
-            {
-                isWalking = false;
-                waitCounter = waitTime;
+                moving = false;
+                timeBetweenMoveCounter = timeBetweenMove;
             }
         }
         else
         {
-            waitCounter -= Time.deltaTime;
+            timeBetweenMoveCounter -= Time.deltaTime;
             myRigidbody.velocity = Vector2.zero;
-            if (waitCounter < 0)
+
+            if (timeBetweenMoveCounter < 0f)
             {
-                ChooseDirection();
+                moving = true;
+                timeToMoveCounter = timeToMove;
+
+                moveDirector = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
             }
         }
     }
-
-    public void ChooseDirection()
-    {
-        WalkDirection = Random.Range(0, 4);
-        isWalking = true;
-        walkCounter = walkTime;
-    }
 }
+
+  
