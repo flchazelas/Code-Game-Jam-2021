@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ItemShopName : MonoBehaviour
 {
-    public GameObject arc;
-    public Text arcName;
+    public GameObject item;
+    public Text itemName;
 
     // Start is called before the first frame update
     void Start()
     {
-        arcName.enabled = false;   
+        itemName.enabled = false;   
     }
 
     // Update is called once per frame
@@ -22,17 +22,18 @@ public class NewBehaviourScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("Collision");
         if (col.tag == "Player")
         {
-            arcName.enabled = true;
-        }  
+            itemName.enabled = true;
+        }
     }
 
-    private void OnTriggerExit2D(Collider2D col)
+    void OnTriggerExit2D(Collider2D col)
     {
         if (col.tag == "Player")
         {
-            arcName.enabled = false;
+            itemName.enabled = false;
         }
     }
 
