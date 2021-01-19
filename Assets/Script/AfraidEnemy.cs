@@ -80,8 +80,10 @@ public class AfraidEnemy : MonoBehaviour
                     currentLerpTime = lerpTime;
                 }
 
+                Vector3 direction = startPos - endPos;
+                Vector3 destination = startPos + direction;
                 float perc = currentLerpTime / lerpTime;
-                transform.position = Vector3.Lerp(startPos, -endPos, perc);
+                transform.position = Vector3.Lerp(startPos, destination, perc);
             }
         }
     }
