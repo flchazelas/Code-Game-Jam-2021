@@ -7,9 +7,10 @@ public class ItemShopName : MonoBehaviour
 {
     public GameObject item;
     public Text itemName;
+    public Sprite itemView;
     public int price;
     public string name;
-    public Sprite itemView;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +29,27 @@ public class ItemShopName : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Collision");
         if (col.tag == "Player")
         {
             itemName.enabled = true;
+        }
+
+        if (Input.GetKey(KeyCode.F))
+        {
+            InventoryFunction.buyItem(price);
+
+            if(name == "Arc" || name == "arc")
+            {
+
+            }
+            else if(name == "Heart" || name == "heart")
+            {
+                GameVariables.nbHeart++;
+            }
+            else if(name == "Arrow" || name == "arrow")
+            {
+                GameVariables.nbArrow++;
+            }
         }
     }
 
