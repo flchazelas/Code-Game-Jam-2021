@@ -40,7 +40,7 @@ public class MoveEnemy : MonoBehaviour
         if (moving)
         {
             timeToMoveCounter -= Time.deltaTime;
-            myRigidbody.velocity = moveDirector;
+            myRigidbody.velocity = moveDirector*moveSpeed;
 
             if (timeToMoveCounter < 0f)
             {
@@ -61,7 +61,8 @@ public class MoveEnemy : MonoBehaviour
                 //timeToMoveCounter = timeToMove;
                 timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeBetweenMove * 1.25f);
 
-                moveDirector = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
+                moveDirector = new Vector3(Random.Range(-1f, 1f) , Random.Range(-1f, 1f) , 0f);
+                moveDirector.Normalize();
             }
         }
 
