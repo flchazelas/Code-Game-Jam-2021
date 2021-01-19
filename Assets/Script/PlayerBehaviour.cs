@@ -133,6 +133,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     IEnumerator Shoot() {
+        MusicManager.GetMusic().PlayEffect("shoot"); 
         animator.SetBool("isShooting", true);
         yield return new WaitForSeconds(0.5f);
         animator.SetBool("isShooting", false);
