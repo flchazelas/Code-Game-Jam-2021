@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowBehaviour : MonoBehaviour
 {
-    public float speed = 2f;
+    public float speed = 1f;
 
     Rigidbody2D rgb;
 
@@ -14,9 +14,14 @@ public class ArrowBehaviour : MonoBehaviour
         rgb = GetComponent<Rigidbody2D>();
     }
 
+    private void FixedUpdate()
+    {
+        //rgb.velocity = Vector2.right * speed;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        rgb.MovePosition((rgb.position + Vector2.right) * speed * Time.deltaTime);
+
     }
 }

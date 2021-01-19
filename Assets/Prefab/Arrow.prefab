@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2767800742951389735}
   - component: {fileID: 7754648011281030880}
   - component: {fileID: 7746636027474674686}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276a0a0b84e8491498c26ee8a6c08d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
 --- !u!50 &7754648011281030880
 Rigidbody2D:
   serializedVersion: 4
@@ -109,7 +110,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
