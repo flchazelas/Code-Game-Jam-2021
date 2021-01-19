@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveNPC : MonoBehaviour
+public class MoveEnemy : MonoBehaviour
 {
     public float moveSpeed;
 
@@ -76,18 +76,19 @@ public class MoveNPC : MonoBehaviour
         }
     }
 
-  void OnCollisionEntre2D (Collision2D other)
-    {
-      if( other.gameObject.name == "Player")
-        {
-            // Destroy(other.gameObject);
+  //void OnCollisionEnter2D (Collision2D other)
+   // {
 
-            other.gameObject.SetActive(false);
-            reloading = true;
+    //  if( other.gameObject.name == "Perso Test")
+     //   {
+           // Destroy(other.gameObject);
 
-            thePlayer = other.gameObject;
-        }
-    }
+        //    other.gameObject.SetActive(false);
+         //   reloading = true;
+
+         //   thePlayer = other.gameObject;
+        //}
+    //}
 }
 
   
