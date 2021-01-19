@@ -24,8 +24,8 @@ public class HurtEnemy : MonoBehaviour
         if (other.gameObject.tag == "Arrow");
         {
             //Destroy(other.gameObject);
-            other.gameObject.GetComponent<EnemyHeal>().HurtEnemy(damageToGive);
-
+            EnemyHeal enemy = other.gameObject.GetComponent<EnemyHeal>();
+            if (enemy != null) enemy.HurtEnemy(damageToGive);
         }
     }
 }
