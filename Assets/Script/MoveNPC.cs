@@ -33,34 +33,36 @@ public class MoveNPC : MonoBehaviour
     {
         if(isWalking)
         {
-            walkCounter -= moveSpeed;
-            if(walkCounter < 0)
+            walkCounter -= Time.deltaTime;
+            
+            switch (WalkDirection)
+            {
+                case 0:
+                    myRigidbody.velocity = new Vector2(0, moveSpeed);
+                    break;
+
+                case 1:
+                    myRigidbody.velocity = new Vector2(moveSpeed, 0);
+                    break;
+
+                case 2:
+                    myRigidbody.velocity = new Vector2(0, -moveSpeed);
+                    break;
+                case 3:
+                    myRigidbody.velocity = new Vector2(-moveSpeed, 0);
+                    break;
+            }
+
+            if (walkCounter < 0)
             {
                 isWalking = false;
                 waitCounter = waitTime;
             }
-            switch (WalkDirection)
-            {
-                case 0:
-
-                    break;
-
-                case 1:
-
-                    break;
-
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-            }
-
         }
         else
         {
-            waitCounter -= moveSpeed;
+            waitCounter -= Time.deltaTime;
+            myRigidbody.velocity = Vector2.zero;
             if (waitCounter < 0)
             {
                 ChooseDirection();
