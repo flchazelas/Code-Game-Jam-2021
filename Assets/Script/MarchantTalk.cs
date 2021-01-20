@@ -27,9 +27,10 @@ public class MarchantTalk : MonoBehaviour{
     void Start(){
         nbRequestArrow = 0;
 
-        dialogues["introduction"] = new List <string>(){ "Bonjour Spookie, bienvenue dans notre monde, ... ", "ça va ou quoi ?"};
-        dialogues["trashtalkArrow0"] = new List<string>() { "Oh ? Tu n'as plus de flèches ni d'argent ?", "Bon écoute...", "Je vais te faire une fleur", "Voici 5 flèches pour toi" };
-        dialogues["trashtalkArrow1"] = new List<string>() { "QUOI ?!", "Tu n'as plus de flèches ? Mais quel looser", "tiens." };
+        dialogues["introduction"] = new List <string>(){ "Bonjour Spookie, bienvenue dans notre monde, ... ", "comme tout les anciens aventuriers, ...", "tu as été amené lorsque tu mangeais ton bol de céréales. ...", "J'aimerais te prévenir que les coffres que tu dois chasser sont potentiellement méchant, ...", "certains vont te fuir, d'autres vont t'attaquer. Bonne chance petit." };
+        dialogues["trashtalkArrow0"] = new List<string>() { "Ah... je vois que tu es à sec.", "Mais en plus tu n'as pas d'argent ?", "Bon... Je vais te faire une fleur", "Bon ! Tiens, je te donne quelques flèches pour te dépanner..." };
+        dialogues["trashtalkArrow1"] = new List<string>() { "Tu m'as pris pour les Resto Du Coeur ?", "Vu que tu fais pitié, je t'en donne encore 5 !" };
+        dialogues["trashtalkArrow2"] = new List<string>() { "Bon écoute tu commence à me les casser !"," Je t'en file encore 5 !", "Si tu reviens je te tue !" };
         dialogues["triggered"] = new List<string>() { "AAAAAAAAAAHHHHHH !!!!!!!!" };
     }
 
@@ -50,6 +51,8 @@ public class MarchantTalk : MonoBehaviour{
             conversationIndex = conversationIndex - 1;
             if  (conversationIndex < 0) conversationIndex = 0;
         }
+
+
 
         uiParent.SetActive(showUI);
     }
