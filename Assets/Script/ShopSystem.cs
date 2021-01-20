@@ -25,7 +25,7 @@ public class ShopSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.F) && trig)
+        if (Input.GetKeyUp(KeyCode.F) && trig && GameVariables.nbGold >= price)
         {
             if (name == "Level Up")
             {
