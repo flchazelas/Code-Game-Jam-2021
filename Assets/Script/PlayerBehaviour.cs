@@ -17,6 +17,9 @@ public class PlayerBehaviour : MonoBehaviour
     public int ptsVie;
     public int ptsDegat;
 
+    float coolDownTimeHit = 0.5f;
+    float coolDownTimerHit = 0.5f; 
+
     Animator animator;
 
     private Rigidbody2D rgb;
@@ -46,6 +49,9 @@ public class PlayerBehaviour : MonoBehaviour
         float currentSpeed = normalMode ? speed : sneakySpeed;
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+
+        coolDownTimerHit += Time.deltaTime;
+        if(coolDownTimerHit >= coolDownTimeHit) coolDownTimerHit = coolDownTimeHit;
 
         Vector2 direction = (new Vector2(h, v)).normalized;
 
@@ -150,12 +156,13 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
-        if (other.transform.CompareTag("Enemy"))
-        {
+        if (other.transform.CompareTag("Enemy") && coolDownTimerHit >= coolDownTimeHit) {
             GameVariables.nbHeart--;
             ptsVie--;
+            coolDownTimerHit = 0;
+            MusicManager.GetMusic().PlayEffect("hit", 0.2f);
         }
     }
 
