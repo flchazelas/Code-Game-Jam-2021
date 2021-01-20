@@ -8,6 +8,9 @@ public class MarchantTalk : MonoBehaviour{
     public Text talk;
     public GameObject uiParent;
 
+    public float minTimePass = 0.5f;
+    public float minTimerPass = 0.0f;
+
     Dictionary<string, List<string>> dialogues = new Dictionary<string, List<string>>();
 
     /*
@@ -36,6 +39,10 @@ public class MarchantTalk : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
+
+        minTimerPass += Time.deltaTime;
+        if(minTimerPass >= minTimePass) minTimerPass = minTimePass;
+
         if(conversationIndex >= 0 && conversationIndex < dialogues[conversationType].Count) {
             talk.text = dialogues[conversationType][conversationIndex];
         }
@@ -44,12 +51,15 @@ public class MarchantTalk : MonoBehaviour{
             showUI = false;
         }
 
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && minTimerPass >= minTimePass) {
             conversationIndex = conversationIndex + 1;
+            if(conversationIndex >= 0 && conversationIndex < dialogues[conversationType].Count) MusicManager.GetMusic().PlayEffect("bubble", 0.7f);
+            minTimerPass = 0;
         }
-        if (Input.GetMouseButtonDown(1)) {
+        if (Input.GetMouseButtonDown(1) && minTimerPass >= minTimePass) {
             conversationIndex = conversationIndex - 1;
             if  (conversationIndex < 0) conversationIndex = 0;
+            minTimerPass = 0;
         }
 
 

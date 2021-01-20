@@ -70,6 +70,7 @@ public class Menu : MonoBehaviour
 
     public void Jouer()
     {
+        GameVariables.ResetVariables();
         SceneManager.LoadScene("Ile_map");
     }
 

@@ -10,4 +10,13 @@ public class GameVariables : MonoBehaviour
     public static int arrowDamage = 6;
     public static float speedPrepare = 1f;
     public static bool isWin = false;
+
+    public static void ResetVariables(){
+        nbGold = 10;
+        nbArrow = 5;
+        nbHeart = 5;
+        arrowDamage = 6;
+        speedPrepare = 1f;
+        isWin = false;
+    }
 }

@@ -50,11 +50,11 @@ MonoBehaviour:
   musicVolume: 1
   effectVolume: 1
   allMusics:
-  - name: ActionMusic
-    clip: {fileID: 8300000, guid: 5493ba343e569de44b6fd67f0dd63b9c, type: 3}
-    loop: 1
   - name: PaisibleMusic
     clip: {fileID: 8300000, guid: eb89644338594e94b982f590acfe33e0, type: 3}
+    loop: 1
+  - name: ActionMusic
+    clip: {fileID: 8300000, guid: 5493ba343e569de44b6fd67f0dd63b9c, type: 3}
     loop: 1
   - name: TraqueMusic
     clip: {fileID: 8300000, guid: 51310d8eb4c9ba64e9aad80739938738, type: 3}
@@ -70,3 +70,6 @@ MonoBehaviour:
   - name: explosion
     variants:
     - {fileID: 8300000, guid: 4339d44fad33072409fbe6d414f7a7cd, type: 3}
+  - name: bubble
+    variants:
+    - {fileID: 8300000, guid: 58ea3224081e514489314e909c23d79b, type: 3}
