@@ -332,7 +332,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8517658097071978671, guid: 44db7468fa8dcc843a134e27485a3e50,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -388,8 +388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f941405afa8368e4f8a53761b03f555a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talk: {fileID: 0}
-  uiParent: {fileID: 0}
+  talk: {fileID: 1556198035}
+  uiParent: {fileID: 465738459}
   conversationType: introduction
   conversationIndex: 0
   showUI: 1
