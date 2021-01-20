@@ -68,11 +68,12 @@ public class Boss : MonoBehaviour
         {
             GameVariables.nbGold += 50;
             Destroy(gameObject);
-
+            GameVariables.isWin = true;
         }
 
         if (moving)
         {
+            GetComponent<Animator>().SetBool("isWalking", true);
             timeToMoveCounter -= Time.deltaTime;
             myRigidbody.velocity = moveDirector * moveSpeed;
 
@@ -81,7 +82,7 @@ public class Boss : MonoBehaviour
                 moving = false;
                 //timeBetweenMoveCounter = timeBetweenMove;
                 timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
-
+                GetComponent<Animator>().SetBool("isWalking", false);
             }
         }
         else
@@ -111,19 +112,19 @@ public class Boss : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    /*void OnCollisionEnter2D(Collision2D other)
     {
 
-        if (other.gameObject.name == "Perso Test")
+        if (other.gameObject.tag == "Player")
         {
-            Destroy(other.gameObject);
+            GameVariables.nbHeart--;
 
             other.gameObject.SetActive(false);
             reloading = true;
 
             thePlayer = other.gameObject;
         }
-    }
+    }*/
 
     //Vie
     public void HurtBoss(int damageToGive)

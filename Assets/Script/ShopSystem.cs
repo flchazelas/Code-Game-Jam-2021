@@ -18,7 +18,7 @@ public class ShopSystem : MonoBehaviour
     void Start()
     {
         itemView = GetComponent<SpriteRenderer>().sprite;
-        itemName.text = name + " " + price.ToString() + "$";
+        itemName.text = price.ToString() + "$";
         itemName.enabled = false; 
     }
 

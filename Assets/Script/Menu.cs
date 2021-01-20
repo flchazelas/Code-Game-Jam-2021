@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
         imageEchec.enabled = false;
         imageMenu.enabled = false;
         imageFin.enabled = false;
-        bouton.enabled = true;
+        bouton.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape)) {
             imageMenu.enabled = true;
-            isPaused = false;
+            isPaused = true;
             canvas.SetActive(true);
             canvasPrincipal.SetActive(false);
         }
@@ -45,7 +45,7 @@ public class Menu : MonoBehaviour
         {
             canvas.SetActive(true);
             imageEchec.enabled = true;
-            bouton.enabled = false;
+            bouton.gameObject.SetActive(false);
             canvasPrincipal.SetActive(false);
         }
 
@@ -53,14 +53,14 @@ public class Menu : MonoBehaviour
         {
             canvas.SetActive(true);
             imageFin.enabled = true;
-            bouton.enabled = false;
+            bouton.gameObject.SetActive(false);
             canvasPrincipal.SetActive(false);
         }
     }
 
     public void Continuer()
     {
-        isPaused = true;
+        isPaused = false;
         canvas.SetActive(false);
         canvasPrincipal.SetActive(true);
         imageEchec.enabled = false;

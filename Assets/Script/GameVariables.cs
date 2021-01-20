@@ -8,7 +8,7 @@ public class GameVariables : MonoBehaviour
     public static int nbArrow = 5;
     public static int nbHeart = 5;
     public static int arrowDamage = 6;
-    public static float speedPrepare = 1f;
+    public static float speedPrepare = 1.5f;
     public static bool isWin = false;
 
     public static void ResetVariables(){
@@ -16,7 +16,7 @@ public class GameVariables : MonoBehaviour
         nbArrow = 5;
         nbHeart = 5;
         arrowDamage = 6;
-        speedPrepare = 1f;
+        speedPrepare = 1.5f;
         isWin = false;
     }
 }
