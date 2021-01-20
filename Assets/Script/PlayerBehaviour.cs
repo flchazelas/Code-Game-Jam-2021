@@ -25,6 +25,8 @@ public class PlayerBehaviour : MonoBehaviour
     bool canMove = true;
     bool canShoot = true;
 
+    bool isRunning = false;
+    bool isSneaky = false;
 
     // Start is called before the first frame update
     void Start()
@@ -83,10 +85,12 @@ public class PlayerBehaviour : MonoBehaviour
 
         //Sneaky
         if (Input.GetKey(KeyCode.LeftShift)) {
-        animator.SetBool("isSneaky", true);
+            animator.SetBool("isSneaky", true);
+            isSneaky = true;
             normalMode = false;
         } else {
             animator.SetBool("isSneaky", false);
+            isSneaky = false;
             normalMode = true;
         }
     }
@@ -103,6 +107,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
         animator.SetBool("isRunning", rgb.velocity.magnitude > 0);
+        isRunning = rgb.velocity.magnitude > 0;
 
         //Shoot
         if (Input.GetKey(KeyCode.Space)) {
@@ -143,6 +148,10 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    public float GetPlayerSoundIntensity(){
+        return 1 + (isRunning ? 2 : 0) + (isSneaky ? -1 : 0);
+    }
+
     IEnumerator Respire() {
         if (normalMode) {
             animator.SetBool("isBreath", true);
@@ -160,7 +169,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     IEnumerator Shoot() {
-        MusicManager.GetMusic().PlayEffect("shoot"); 
+        MusicManager.GetMusic().PlayEffect("shoot", 0.5f);
         animator.SetBool("isShooting", true);
         yield return new WaitForSeconds(0.5f);
         animator.SetBool("isShooting", false);

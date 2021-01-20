@@ -46,7 +46,7 @@ MonoBehaviour:
   startOnPlay: 1
   maxDistance: 50
   minDistance: 20
-  volume: 1
+  volume: 0.2
   musicVolume: 1
   effectVolume: 1
   allMusics:

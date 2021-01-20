@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  speedPrepare: 1.2
   sneakySpeed: 0.3
   accelerationTime: 0.3
   accelerationTimer: 0
@@ -107,6 +106,8 @@ MonoBehaviour:
   barre: {fileID: 1242068428976467741}
   arrowSpeed: 10
   arrowDistance: 0.5
+  ptsVie: 0
+  ptsDegat: 0
 --- !u!50 &1242068428354911666
 Rigidbody2D:
   serializedVersion: 4
