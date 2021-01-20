@@ -44,7 +44,8 @@ public class Boss : MonoBehaviour
 
         timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeBetweenMove * 1.25f);
-
+        MusicManager.GetMusic().PlaySound("ActionMusic", 2f);
+        GameVariables.isBoss = true;
     }
 
     // Update is called once per frame
@@ -69,6 +70,7 @@ public class Boss : MonoBehaviour
             GameVariables.nbGold += 50;
             Destroy(gameObject);
             GameVariables.isWin = true;
+            GameVariables.isBoss = false;
         }
 
         if (moving)

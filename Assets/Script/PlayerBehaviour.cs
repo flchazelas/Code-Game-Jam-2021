@@ -37,6 +37,7 @@ public class PlayerBehaviour : MonoBehaviour
         StartCoroutine("Respire");
         ptsDegat = 10;
         ptsVie = GameVariables.nbHeart;
+        MusicManager.GetMusic().PlaySound("PaisibleMusic", 2f);
     }
 
     // Update is called once per frame
@@ -87,8 +88,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift)) {
             animator.SetBool("isSneaky", true);
 
-            if(!isSneaky){
-                MusicManager.GetMusic().PlaySound("TraqueMusic");
+            if(!isSneaky && !GameVariables.isBoss){
+                MusicManager.GetMusic().PlaySound("TraqueMusic", 2f);
             }
 
             isSneaky = true;
@@ -96,8 +97,8 @@ public class PlayerBehaviour : MonoBehaviour
         } else {
             animator.SetBool("isSneaky", false);
 
-            if (isSneaky) {
-                MusicManager.GetMusic().PlaySound("PaisibleMusic");
+            if (isSneaky && !GameVariables.isBoss) {
+                MusicManager.GetMusic().PlaySound("PaisibleMusic", 2f);
             }
 
             isSneaky = false;
