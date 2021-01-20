@@ -68,13 +68,7 @@ public class Game : MonoBehaviour
                 coeur3.enabled = false;
                 coeur2.enabled = false;
                 coeur1.enabled = false;
-                gameOver();
                 break;
         }
-    }
-
-    public void gameOver()
-    {
-
     }
 }
