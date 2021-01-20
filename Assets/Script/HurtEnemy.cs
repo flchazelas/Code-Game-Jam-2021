@@ -21,7 +21,7 @@ public class HurtEnemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Arrow") {
+        if (other.gameObject.tag == "Arrow"); {
             //Destroy(other.gameObject);
             EnemyHeal enemy = other.gameObject.GetComponent<EnemyHeal>();
             if (enemy != null) enemy.HurtEnemy(damageToGive);
