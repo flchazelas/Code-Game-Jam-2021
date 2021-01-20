@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -7743679257917628173}
   - component: {fileID: -2609927731309072944}
   - component: {fileID: 3413395906620830766}
+  - component: {fileID: 7940399629369615817}
   m_Layer: 0
   m_Name: Coffre_attack_mob_3
   m_TagString: Enemy
@@ -196,3 +197,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 20
   CurrentHealth: 0
+--- !u!95 &7940399629369615817
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8567107601099689810}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94494849db808394b8fbc3c214defec8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

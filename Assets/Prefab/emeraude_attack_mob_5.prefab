@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6957203146010635786}
   - component: {fileID: 7513680037666440915}
   - component: {fileID: 7043623188482380907}
+  - component: {fileID: 9175511669330101316}
   m_Layer: 0
   m_Name: emeraude_attack_mob_5
   m_TagString: Enemy
@@ -196,3 +197,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6d31418a42b614d9c693291eaf6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &9175511669330101316
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161407110824278857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e70a245882d0b894887dff88151d5411, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -95,17 +95,18 @@ public class TargetDectection : MonoBehaviour
         }
         else { 
 
-        if (isLerping)
-        {
-            currentLerpTime += Time.deltaTime;
-            if (currentLerpTime > lerpTime)
+            if (isLerping)
             {
-                currentLerpTime = lerpTime;
+                currentLerpTime += Time.deltaTime;
+                if (currentLerpTime > lerpTime)
+                {
+                    currentLerpTime = lerpTime;
+                }
+                GetComponent<Animator>().SetBool("isWalking", true);
+                float perc = currentLerpTime / lerpTime;
+                transform.position = Vector3.Lerp(startPos, endPos, perc);
             }
 
-            float perc = currentLerpTime / lerpTime;
-            transform.position = Vector3.Lerp(startPos, endPos, perc);
-        }
         }
     }
 
