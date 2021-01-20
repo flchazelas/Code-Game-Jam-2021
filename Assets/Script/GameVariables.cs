@@ -9,4 +9,5 @@ public class GameVariables : MonoBehaviour
     public static int nbHeart = 5;
     public static int arrowDamage = 6;
     public static float speedPrepare = 1f;
+    public static bool isWin = false;
 }
