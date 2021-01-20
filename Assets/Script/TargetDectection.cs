@@ -16,19 +16,43 @@ public class TargetDectection : MonoBehaviour
     bool isLerping = false;
     bool isCloseCombat = false;
 
+    CircleCollider2D circle;
 
     Rigidbody2D body;
 
-    private void Start()
-    {
+    private void Start() {
         body=GetComponent<Rigidbody2D>();
+        circle = GetComponent<CircleCollider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            target = other.gameObject;
+            PlayerBehaviour player = other.gameObject.GetComponent<PlayerBehaviour>();
+            if (player == null) return;
+
+            float distance = Vector2.Distance(player.transform.position, transform.position); //Distance par rapport au joueur
+            float soundEmitted = player.GetPlayerSoundIntensity();
+            float radius = circle.radius;
+
+            if (distance > radius * (80f/100f)) {
+                if  (soundEmitted > 2)
+                {
+                    target = other.gameObject;
+                                }                    
+            }
+            else if (distance > radius * (40f / 100f))
+            {
+                if (soundEmitted > 1)
+                {
+                    target = other.gameObject;
+                } //DETECTED
+            }
+            else
+            {
+                target = other.gameObject;
+            }
 
             updateLerpingParams();
         }
