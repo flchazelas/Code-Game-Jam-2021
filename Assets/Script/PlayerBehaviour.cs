@@ -86,10 +86,20 @@ public class PlayerBehaviour : MonoBehaviour
         //Sneaky
         if (Input.GetKey(KeyCode.LeftShift)) {
             animator.SetBool("isSneaky", true);
+
+            if(!isSneaky){
+                MusicManager.GetMusic().PlaySound("TraqueMusic");
+            }
+
             isSneaky = true;
             normalMode = false;
         } else {
             animator.SetBool("isSneaky", false);
+
+            if (isSneaky) {
+                MusicManager.GetMusic().PlaySound("PaisibleMusic");
+            }
+
             isSneaky = false;
             normalMode = true;
         }
@@ -150,6 +160,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     public float GetPlayerSoundIntensity(){
         return 1 + (isRunning ? 2 : 0) + (isSneaky ? -1 : 0);
+    }
+
+    public void WalkSound(){
+        MusicManager.GetMusic().PlayEffect("walk", 0.3f);
+    }
+
+    public void WalkSmoothSound(){
+        MusicManager.GetMusic().PlayEffect("walk", 0.1f);
     }
 
     IEnumerator Respire() {

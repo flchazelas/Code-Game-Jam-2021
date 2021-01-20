@@ -23,6 +23,7 @@ public class RammassageArrow : MonoBehaviour
         {
             GameVariables.nbArrow++;
             Destroy(transform.parent.gameObject);
+            MusicManager.GetMusic().PlayEffect("getArrow", 0.3f); 
         }
     }
 }

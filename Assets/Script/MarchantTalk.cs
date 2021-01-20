@@ -53,7 +53,7 @@ public class MarchantTalk : MonoBehaviour{
 
         if (Input.GetMouseButtonDown(0) && minTimerPass >= minTimePass) {
             conversationIndex = conversationIndex + 1;
-            if(conversationIndex >= 0 && conversationIndex < dialogues[conversationType].Count) MusicManager.GetMusic().PlayEffect("bubble", 0.7f);
+            if(conversationIndex >= 0 && conversationIndex <= dialogues[conversationType].Count) MusicManager.GetMusic().PlayEffect("bubble", 0.7f);
             minTimerPass = 0;
         }
         if (Input.GetMouseButtonDown(1) && minTimerPass >= minTimePass) {

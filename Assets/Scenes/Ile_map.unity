@@ -1501,7 +1501,7 @@ RectTransform:
   m_GameObject: {fileID: 125605901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1974044480}
   m_RootOrder: 0
@@ -1531,7 +1531,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3a68a3d7281c0dd40994ed251098a65c, type: 3}
+    m_Font: {fileID: 12800000, guid: bb1f1e457628ef54a92813dee56dd276, type: 3}
     m_FontSize: 1
     m_FontStyle: 0
     m_BestFit: 0
@@ -5937,7 +5937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491782416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.5, y: 16.24, z: -10}
+  m_LocalPosition: {x: 18.5, y: 17.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9262,7 +9262,7 @@ PrefabInstance:
     - target: {fileID: 1242068428354911676, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.24
+      value: 17.3
       objectReference: {fileID: 0}
     - target: {fileID: 1242068428354911676, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
@@ -16821,7 +16821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425833190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.5, y: 16.24, z: -10}
+  m_LocalPosition: {x: 18.5, y: 17.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 865790668}
@@ -17215,7 +17215,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: a6798fcf37295dc46a5b951c027470b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d6d8cfa6944b2fa4ea5221536d23ccdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17235,7 +17235,7 @@ Transform:
   m_GameObject: {fileID: 1471353392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.844, y: 17.817, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1974044480}
   m_Father: {fileID: 0}
@@ -17258,7 +17258,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
