@@ -23,6 +23,7 @@ public class EnemyHeal : MonoBehaviour
         if(CurrentHealth <= 0)
         {
             GameVariables.nbGold += 5;
+            GameObject explosion = Instantiate((GameObject)Resources.Load("prefabs/Explosion"), transform);
             Destroy(gameObject);
         }
     }
