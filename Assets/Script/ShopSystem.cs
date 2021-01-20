@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ShopSystem : MonoBehaviour
 {
     public GameObject item;
+    public GameObject shop;
     public Text itemName;
     public Sprite itemView;
     public int price;
@@ -52,6 +53,10 @@ public class ShopSystem : MonoBehaviour
                 GameVariables.nbArrow++;
                 InventoryFunction.buyItem(price);
             }
+        }
+        else if (Input.GetKeyUp(KeyCode.F) && trig)
+        {
+            shop.GetComponent<MarchantTalk>().ReclameArrow();
         }
     }
 
