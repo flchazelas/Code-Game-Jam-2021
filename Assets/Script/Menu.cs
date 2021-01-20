@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour
     public Image imageMenu;
     public Image imageEchec;
     public Image imageFin;
+    public Image imageControle;
     public Button bouton;
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class Menu : MonoBehaviour
         imageEchec.enabled = false;
         imageMenu.enabled = false;
         imageFin.enabled = false;
+        imageControle.enabled = false;
         bouton.gameObject.SetActive(true);
     }
 
@@ -77,5 +79,10 @@ public class Menu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Controle()
+    {
+        imageControle.enabled = true;
     }
 }
