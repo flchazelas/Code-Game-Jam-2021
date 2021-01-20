@@ -1802,7 +1802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150974837}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.031, y: -0.656, z: 0}
+  m_LocalPosition: {x: 0, y: -0.656, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1403869302}
@@ -3152,7 +3152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250484357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.031, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1403869302}
@@ -9237,22 +9237,22 @@ PrefabInstance:
     - target: {fileID: 1242068428354911667, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.15984344
+      value: 0.22200966
       objectReference: {fileID: 0}
     - target: {fileID: 1242068428354911667, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.35284996
+      value: 0.1254654
       objectReference: {fileID: 0}
     - target: {fileID: 1242068428354911667, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.01580429
+      value: -0.01491642
       objectReference: {fileID: 0}
     - target: {fileID: 1242068428354911667, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.030137062
+      value: -0.15638924
       objectReference: {fileID: 0}
     - target: {fileID: 1242068428354911676, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
@@ -12622,7 +12622,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.120545626, y: -1.1313756}
+  m_Offset: {x: 0.06803149, y: -1.2461224}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12633,7 +12633,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1226096, y: 1.0847831}
+  m_Size: {x: 0.7775222, y: 1.3142767}
   m_EdgeRadius: 0
 --- !u!114 &1029943166
 MonoBehaviour:
@@ -16049,7 +16049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345528504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.031, y: 0.469, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1403869302}
@@ -16678,7 +16678,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.028921127, y: -0.19712353}
+  m_Offset: {x: -0.0030574799, y: -0.22377205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -16689,7 +16689,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.156845, y: 1.7875729}
+  m_Size: {x: 2.1605377, y: 1.7427788}
   m_EdgeRadius: 0
 --- !u!1001 &1424266327
 PrefabInstance:
@@ -17259,7 +17259,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.103401184, y: -0.9249115}
+  m_Offset: {x: -0.019802094, y: -0.99458694}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17270,7 +17270,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1725006, y: 0.93997955}
+  m_Size: {x: 0.75450134, y: 1.0793304}
   m_EdgeRadius: 0
 --- !u!114 &1471353396
 MonoBehaviour:
@@ -19136,7 +19136,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.045913696, y: -0.49595737}
+  m_Offset: {x: -0.035464287, y: -0.49595737}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19147,7 +19147,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55558395, y: 0.57016945}
+  m_Size: {x: 0.4092846, y: 0.57016945}
   m_EdgeRadius: 0
 --- !u!114 &1663388463
 MonoBehaviour:
