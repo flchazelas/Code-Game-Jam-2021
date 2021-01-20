@@ -39,6 +39,7 @@ public class MoveEnemy : MonoBehaviour
     {
         if (moving)
         {
+            GetComponent<Animator>().SetBool("isWalking", true);
             timeToMoveCounter -= Time.deltaTime;
             myRigidbody.velocity = moveDirector*moveSpeed;
 
@@ -47,7 +48,7 @@ public class MoveEnemy : MonoBehaviour
                 moving = false;
                 //timeBetweenMoveCounter = timeBetweenMove;
                 timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
-
+                GetComponent<Animator>().SetBool("isWalking", false);
             }
         }
         else

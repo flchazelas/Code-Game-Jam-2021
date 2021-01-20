@@ -21,8 +21,7 @@ public class HurtBoss : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Arrow");
-        {
+        if (other.gameObject.tag == "Arrow") {
             //Destroy(other.gameObject);
             Boss boss = other.gameObject.GetComponent<Boss>();
             if (boss != null) boss.HurtBoss(damageToGive);

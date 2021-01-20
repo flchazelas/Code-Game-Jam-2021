@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MenuPause.unity
-    guid: 42d410ad838b0e743b22a4049d3e411d
-  - enabled: 1
     path: Assets/Scenes/Ile_map.unity
     guid: 7af2a60527efdc545b4cdf61f0e1e86a
   m_configObjects: {}

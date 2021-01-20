@@ -17,6 +17,9 @@ public class PlayerBehaviour : MonoBehaviour
     public int ptsVie;
     public int ptsDegat;
 
+    float coolDownTimeHit = 0.5f;
+    float coolDownTimerHit = 0.5f; 
+
     Animator animator;
 
     private Rigidbody2D rgb;
@@ -37,6 +40,7 @@ public class PlayerBehaviour : MonoBehaviour
         StartCoroutine("Respire");
         ptsDegat = 10;
         ptsVie = GameVariables.nbHeart;
+        MusicManager.GetMusic().PlaySound("PaisibleMusic", 2f);
     }
 
     // Update is called once per frame
@@ -45,6 +49,9 @@ public class PlayerBehaviour : MonoBehaviour
         float currentSpeed = normalMode ? speed : sneakySpeed;
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+
+        coolDownTimerHit += Time.deltaTime;
+        if(coolDownTimerHit >= coolDownTimeHit) coolDownTimerHit = coolDownTimeHit;
 
         Vector2 direction = (new Vector2(h, v)).normalized;
 
@@ -86,10 +93,20 @@ public class PlayerBehaviour : MonoBehaviour
         //Sneaky
         if (Input.GetKey(KeyCode.LeftShift)) {
             animator.SetBool("isSneaky", true);
+
+            if(!isSneaky && !GameVariables.isBoss){
+                MusicManager.GetMusic().PlaySound("TraqueMusic", 2f);
+            }
+
             isSneaky = true;
             normalMode = false;
         } else {
             animator.SetBool("isSneaky", false);
+
+            if (isSneaky && !GameVariables.isBoss) {
+                MusicManager.GetMusic().PlaySound("PaisibleMusic", 2f);
+            }
+
             isSneaky = false;
             normalMode = true;
         }
@@ -139,17 +156,26 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
-        if (other.transform.CompareTag("Enemy"))
-        {
+        if (other.transform.CompareTag("Enemy") && coolDownTimerHit >= coolDownTimeHit) {
             GameVariables.nbHeart--;
             ptsVie--;
+            coolDownTimerHit = 0;
+            MusicManager.GetMusic().PlayEffect("hit", 0.2f);
         }
     }
 
     public float GetPlayerSoundIntensity(){
         return 1 + (isRunning ? 2 : 0) + (isSneaky ? -1 : 0);
+    }
+
+    public void WalkSound(){
+        MusicManager.GetMusic().PlayEffect("walk", 0.3f);
+    }
+
+    public void WalkSmoothSound(){
+        MusicManager.GetMusic().PlayEffect("walk", 0.1f);
     }
 
     IEnumerator Respire() {
