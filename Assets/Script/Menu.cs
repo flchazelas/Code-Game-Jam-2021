@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
 {
     bool isPaused = false;
     public GameObject canvas;
+    public GameObject canvasPrincipal;
     public Image imageMenu;
     public Image imageEchec;
     public Image imageFin;
@@ -30,6 +31,7 @@ public class Menu : MonoBehaviour
             imageMenu.enabled = true;
             isPaused = false;
             canvas.SetActive(true);
+            canvasPrincipal.SetActive(false);
         }
 
         if (isPaused)
@@ -43,6 +45,7 @@ public class Menu : MonoBehaviour
             canvas.SetActive(true);
             imageEchec.enabled = true;
             bouton.enabled = false;
+            canvasPrincipal.SetActive(false);
         }
 
         if (GameVariables.isWin)
@@ -50,6 +53,7 @@ public class Menu : MonoBehaviour
             canvas.SetActive(true);
             imageFin.enabled = true;
             bouton.enabled = false;
+            canvasPrincipal.SetActive(false);
         }
     }
 
@@ -57,6 +61,7 @@ public class Menu : MonoBehaviour
     {
         isPaused = true;
         canvas.SetActive(false);
+        canvasPrincipal.SetActive(true);
         imageEchec.enabled = false;
         imageMenu.enabled = false;
         imageFin.enabled = false;
