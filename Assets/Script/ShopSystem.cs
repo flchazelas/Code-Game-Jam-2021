@@ -11,6 +11,7 @@ public class ShopSystem : MonoBehaviour
     public int price;
     public bool trig;
     public string name;
+    int level = 1;
     
 
     // Start is called before the first frame update
@@ -18,8 +19,7 @@ public class ShopSystem : MonoBehaviour
     {
         itemView = GetComponent<SpriteRenderer>().sprite;
         itemName.text = name + " " + price.ToString() + "$";
-        itemName.enabled = false;   
-        
+        itemName.enabled = false; 
     }
 
     // Update is called once per frame
@@ -32,6 +32,11 @@ public class ShopSystem : MonoBehaviour
                 GameVariables.arrowDamage += 2;
                 GameVariables.speedPrepare += 0.5f;
                 InventoryFunction.buyItem(price);
+                level++;
+                if(level == 2)
+                {
+                    price = price * 2;
+                }
             }
             else if (name == "Heart")
             {
@@ -67,6 +72,7 @@ public class ShopSystem : MonoBehaviour
     {
         if (col.tag == "Player")
         {
+            trig = false;
             itemName.enabled = false;
         }
     }

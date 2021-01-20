@@ -1012,8 +1012,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 0
 --- !u!222 &59697514
@@ -1543,7 +1543,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Heart 5$
+  m_Text: Heart 15$
 --- !u!222 &125605904
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2668,7 +2668,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Arrow 2$
+  m_Text: Arrow 10$
 --- !u!222 &214502719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5452,7 +5452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Level Up 15$
+  m_Text: Level Up 50$
 --- !u!222 &475506438
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5729,7 +5729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491782416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.45, y: 16.82, z: -10}
+  m_LocalPosition: {x: 18.5, y: 16.24, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8319,8 +8319,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 0
 --- !u!222 &709231654
@@ -8873,6 +8873,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1242068428354911667, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.15984344
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242068428354911667, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.35284996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242068428354911667, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.01580429
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242068428354911667, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.030137062
+      objectReference: {fileID: 0}
     - target: {fileID: 1242068428354911676, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
       propertyPath: m_RootOrder
@@ -8881,12 +8901,12 @@ PrefabInstance:
     - target: {fileID: 1242068428354911676, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.45
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 1242068428354911676, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.82
+      value: 16.24
       objectReference: {fileID: 0}
     - target: {fileID: 1242068428354911676, guid: c6b36cfc4f157f942bb5b3fdae5047c9,
         type: 3}
@@ -12068,7 +12088,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09092522, y: -1.0911083}
+  m_Offset: {x: 0.120545626, y: -1.1313756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12079,7 +12099,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1818504, y: 1.1653175}
+  m_Size: {x: 1.1226096, y: 1.0847831}
   m_EdgeRadius: 0
 --- !u!114 &1029943166
 MonoBehaviour:
@@ -12096,7 +12116,7 @@ MonoBehaviour:
   item: {fileID: 1029943162}
   itemName: {fileID: 475506437}
   itemView: {fileID: 21300000, guid: 9331aa165574f1d44a19b7bd908c06ca, type: 3}
-  price: 15
+  price: 50
   trig: 0
   name: Level Up
 --- !u!1001 &1035824035
@@ -16052,7 +16072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425833190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.45, y: 16.82, z: -10}
+  m_LocalPosition: {x: 18.5, y: 16.24, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 865790668}
@@ -16381,7 +16401,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08506203, y: -0.9249115}
+  m_Offset: {x: -0.103401184, y: -0.9249115}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -16392,7 +16412,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2091789, y: 0.93997955}
+  m_Size: {x: 1.1725006, y: 0.93997955}
   m_EdgeRadius: 0
 --- !u!114 &1471353396
 MonoBehaviour:
@@ -16409,7 +16429,7 @@ MonoBehaviour:
   item: {fileID: 1471353392}
   itemName: {fileID: 125605903}
   itemView: {fileID: 21300000, guid: a6798fcf37295dc46a5b951c027470b1, type: 3}
-  price: 5
+  price: 15
   trig: 0
   name: Heart
 --- !u!1001 &1490671961
@@ -18339,7 +18359,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.041329384, y: -0.49595737}
+  m_Offset: {x: -0.045913696, y: -0.49595737}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18350,7 +18370,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.61976814, y: 0.57016945}
+  m_Size: {x: 0.55558395, y: 0.57016945}
   m_EdgeRadius: 0
 --- !u!114 &1663388463
 MonoBehaviour:
@@ -18368,7 +18388,7 @@ MonoBehaviour:
   itemName: {fileID: 214502718}
   itemView: {fileID: 5920605394457140368, guid: 7f1b47cd9df9ce34ca80068518ecc22c,
     type: 3}
-  price: 2
+  price: 10
   trig: 0
   name: Arrow
 --- !u!1001 &1668670561
