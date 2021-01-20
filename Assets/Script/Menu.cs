@@ -68,6 +68,7 @@ public class Menu : MonoBehaviour
         imageEchec.enabled = false;
         imageMenu.enabled = false;
         imageFin.enabled = false;
+        imageControle.enabled = false;
     }
 
     public void Jouer()

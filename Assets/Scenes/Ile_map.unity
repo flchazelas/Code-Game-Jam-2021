@@ -21474,7 +21474,6 @@ GameObject:
   - component: {fileID: 1628234231}
   - component: {fileID: 1628234234}
   - component: {fileID: 1628234233}
-  - component: {fileID: 1628234232}
   m_Layer: 5
   m_Name: Image Controle
   m_TagString: Untagged
@@ -21501,25 +21500,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1628234232
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628234230}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7159e5df89b502c4a913fda906ae9409, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1628234233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21539,8 +21519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4425725938452262874, guid: 0227e2566a17e7840b38ccf226eec72c,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: a273cc609fe01ad4ba30ca6bdb65d25d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
