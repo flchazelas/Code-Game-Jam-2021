@@ -27,23 +27,40 @@ public class Game : MonoBehaviour
 
         switch (GameVariables.nbHeart)
         {
+            case 5:
+                coeur5.enabled = true;
+                coeur4.enabled = true;
+                coeur3.enabled = true;
+                coeur2.enabled = true;
+                coeur1.enabled = true;
+                break;
             case 4:
                 coeur5.enabled = false;
+                coeur4.enabled = true;
+                coeur3.enabled = true;
+                coeur2.enabled = true;
+                coeur1.enabled = true;
                 break;
             case 3:
                 coeur5.enabled = false;
                 coeur4.enabled = false;
+                coeur3.enabled = true;
+                coeur2.enabled = true;
+                coeur1.enabled = true;
                 break;
             case 2:
                 coeur5.enabled = false;
                 coeur4.enabled = false;
                 coeur3.enabled = false;
+                coeur2.enabled = true;
+                coeur1.enabled = true;
                 break;
             case 1:
                 coeur5.enabled = false;
                 coeur4.enabled = false;
                 coeur3.enabled = false;
                 coeur2.enabled = false;
+                coeur1.enabled = true;
                 break;
             case 0:
                 coeur5.enabled = false;

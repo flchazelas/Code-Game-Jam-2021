@@ -8,6 +8,8 @@ public class Boss : MonoBehaviour
     public int MaxHealth;
     public int CurrentHealth;
 
+    private int domageBoss;
+
     //Deplacement Boss
     public float moveSpeed;
 
@@ -27,9 +29,12 @@ public class Boss : MonoBehaviour
     public bool reloading;
     private GameObject thePlayer;
 
+    public int DomageBoss { get => domageBoss; set => domageBoss = value; }
+
     // Start is called before the first frame update
     void Start()
     {
+        DomageBoss = 1;
         CurrentHealth = MaxHealth;
 
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -45,10 +50,25 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (CurrentHealth <= 150)
+        {
+            moveSpeed = 1.5f;
+        }
+        if (CurrentHealth <= 100)
+        {
+            moveSpeed = 2f;
+        }
+        if (CurrentHealth <= 50)
+        {
+            moveSpeed = 2.5f;
+            timeBetweenMove = 0.5f;
+            timeToMove = 0.5f;
+        }
         if (CurrentHealth <= 0)
         {
+            GameVariables.nbGold += 50;
             Destroy(gameObject);
+
         }
 
         if (moving)
@@ -106,7 +126,7 @@ public class Boss : MonoBehaviour
     }
 
     //Vie
-    public void HurtEnemy(int damageToGive)
+    public void HurtBoss(int damageToGive)
     {
         CurrentHealth -= damageToGive;
     }

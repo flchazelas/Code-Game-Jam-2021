@@ -6,11 +6,15 @@ public class EnemyHeal : MonoBehaviour
 {
     public int MaxHealth;
     public int CurrentHealth;
+    private int degatDommage;
+
+    public int DegatDommage { get => degatDommage; set => degatDommage = value; }
 
     // Start is called before the first frame update
     void Start()
     {
         CurrentHealth = MaxHealth;
+        DegatDommage = 1;
     }
 
     // Update is called once per frame
@@ -18,6 +22,7 @@ public class EnemyHeal : MonoBehaviour
     {
         if(CurrentHealth <= 0)
         {
+            GameVariables.nbGold += 5;
             Destroy(gameObject);
         }
     }
