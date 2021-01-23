@@ -22,7 +22,6 @@ public class MarchantTalk : MonoBehaviour{
     public int conversationIndex = 0;
 
     int nbRequestArrow = 0;
-    int maxRequestArrow = 3;
 
     public bool showUI = true;
 
